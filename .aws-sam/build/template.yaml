@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'environment-variables-example
+
+  Sample SAM Template for environment-variables-example
+
+  '
+Globals:
+  Function:
+    Timeout: 20
+    Environment:
+      Variables:
+        MY_GLOBAL_VARIABLE: Environment variable 1
+Resources:
+  EnvironmentVariablesExampleFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: EnvironmentVariablesExampleFunction
+      Handler: com.appsdeveloperblog.aws.lambda.EnvironmentVariablesExample::handleRequest
+      Runtime: java11
+      Architectures:
+      - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          MY_VARIABLE: Environment variable 1
+          MY_COGNITO_USER_POOL_ID: ABC1234
+          MY_COGNITO_CLIENT_APP_SECRET: SADASDASC
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+    Metadata:
+      SamResourceId: EnvironmentVariablesExampleFunction
+Outputs:
+  EnvironmentVariablesExampleApi:
+    Description: API Gateway endpoint URL for Prod stage for EnvironmentVariablesExample
+      function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
+  EnvironmentVariablesExampleFunction:
+    Description: EnvironmentVariablesExample Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - EnvironmentVariablesExampleFunction
+      - Arn
+  EnvironmentVariablesExampleFunctionIamRole:
+    Description: Implicit IAM Role created for EnvironmentVariablesExample function
+    Value:
+      Fn::GetAtt:
+      - EnvironmentVariablesExampleFunctionRole
+      - Arn

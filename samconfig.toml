@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "environment-variables-example"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-5tgrg39tlnht"
+s3_prefix = "environment-variables-example"
+region = "us-west-2"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
