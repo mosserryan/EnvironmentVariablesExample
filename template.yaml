@@ -11,7 +11,7 @@ Globals:
     Timeout: 20
     Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
-          MY_GLOBAL_VARIABLE: Environment variable 1
+          MY_GLOBAL_VARIABLE: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wHFtcCFcOcZdykTk0
 
 Resources:
   EnvironmentVariablesExampleFunction:
@@ -25,9 +25,9 @@ Resources:
       MemorySize: 512
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
-          MY_VARIABLE: Environment variable 1
-          MY_COGNITO_USER_POOL_ID: ABC1234
-          MY_COGNITO_CLIENT_APP_SECRET: SADASDASC
+          MY_VARIABLE: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wHTg4CQsragsi2mg4xXxwjhAAAAdDByBgkqhkiG9w0BBwagZTBjAgEAMF4GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMM96jRITiFlsnV
+          MY_COGNITO_USER_POOL_ID: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wHj07H
+          MY_COGNITO_CLIENT_APP_SECRET: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wFDOGhq7c9WaGszuTMtGTpKAAAAZzBlBgkqhkiG9w0BBwagWDBWAgEAMFEGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMDBQz
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

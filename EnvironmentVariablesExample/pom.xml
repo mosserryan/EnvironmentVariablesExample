@@ -28,6 +28,13 @@
           <version>4.13.1</version>
           <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-kms -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-kms</artifactId>
+            <version>1.12.404</version>
+        </dependency>
+
     </dependencies>
 
     <build>
