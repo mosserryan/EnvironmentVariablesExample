@@ -11,7 +11,7 @@ Globals:
     Timeout: 20
     Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
-          MY_GLOBAL_VARIABLE: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wHFtcCFcOcZdykTk0
+          MY_GLOBAL_VARIABLE: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wFC2HYj0xQGDndum7m3TdDOAAAAZDBiBgkqhkiG9w0BBwagVTBTAgEAME4GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMdHNK+5tfuB6aTHWPAgEQgCF58ZnH5Gum5IUS2Mb3c2jjlDAvvadh8YkP9nUBnrN6iY4=
 
 Resources:
   EnvironmentVariablesExampleFunction:
@@ -25,9 +25,9 @@ Resources:
       MemorySize: 512
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
-          MY_VARIABLE: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wHTg4CQsragsi2mg4xXxwjhAAAAdDByBgkqhkiG9w0BBwagZTBjAgEAMF4GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMM96jRITiFlsnV
-          MY_COGNITO_USER_POOL_ID: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wHj07H
-          MY_COGNITO_CLIENT_APP_SECRET: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wFDOGhq7c9WaGszuTMtGTpKAAAAZzBlBgkqhkiG9w0BBwagWDBWAgEAMFEGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMDBQz
+          MY_VARIABLE: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wGgtqnIOiXxyVOBo5wDf2cMAAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMXHphyIGQmRH1c4jYAgEQgCCJjrHX+Bb5EC0gKrudUQxZcTH6qq6cWPGTVLYcckaLvw==
+          MY_COGNITO_USER_POOL_ID: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wFUUtx7D6/VMntq7qWT4gt/AAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMnNP4UhGz95+kuQZ3AgEQgCDOsp8PSJw3TmJN0ydC/fk37SJWWF4RVdEJxTKNpjVdbA==
+          MY_COGNITO_CLIENT_APP_SECRET: AQICAHgnTI7WalQnJoRWKOtvmirVX2Pk8JjTWURHXhyh8F2A7wGgtqnIOiXxyVOBo5wDf2cMAAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMXHphyIGQmRH1c4jYAgEQgCCJjrHX+Bb5EC0gKrudUQxZcTH6qq6cWPGTVLYcckaLvw==
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

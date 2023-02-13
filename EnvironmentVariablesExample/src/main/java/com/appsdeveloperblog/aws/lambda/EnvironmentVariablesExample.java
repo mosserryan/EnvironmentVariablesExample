@@ -2,6 +2,7 @@ package com.appsdeveloperblog.aws.lambda;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,10 +21,10 @@ import com.amazonaws.util.Base64;
  */
 public class EnvironmentVariablesExample implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
-    private static final String MY_VARIABLE = decryptKey("MY_VARIABLE");
-    private static final String MY_COGNITO_USER_POOL_ID = decryptKey("MY_COGNITO_USER_POOL_ID");
-    private static final String MY_COGNITO_CLIENT_APP_SECRET = decryptKey("MY_COGNITO_CLIENT_APP_SECRET");
-    private static final String MY_GLOBAL_VARIABLE = decryptKey("MY_GLOBAL_VARIABLE");
+    private final String MY_VARIABLE = decryptKey("MY_VARIABLE");
+    private final String MY_COGNITO_USER_POOL_ID = decryptKey("MY_COGNITO_USER_POOL_ID");
+    private final String MY_COGNITO_CLIENT_APP_SECRET = decryptKey("MY_COGNITO_CLIENT_APP_SECRET");
+    private final String MY_GLOBAL_VARIABLE = decryptKey("MY_GLOBAL_VARIABLE");
 
 
     public APIGatewayProxyResponseEvent handleRequest(final APIGatewayProxyRequestEvent input, final Context context) {
@@ -45,9 +46,10 @@ public class EnvironmentVariablesExample implements RequestHandler<APIGatewayPro
                 .withStatusCode(500);
     }
 
-    private static String decryptKey(String name) {
+    private String decryptKey(String name) {
         System.out.println("Decrypting key");
         byte[] encryptedKey = Base64.decode(System.getenv(name));
+        System.out.println("Decoded key");
         Map<String, String> encryptionContext = new HashMap<>();
         encryptionContext.put("LambdaFunctionName",
                 System.getenv("AWS_LAMBDA_FUNCTION_NAME"));
@@ -59,7 +61,7 @@ public class EnvironmentVariablesExample implements RequestHandler<APIGatewayPro
                 .withEncryptionContext(encryptionContext);
 
         ByteBuffer plainTextKey = client.decrypt(request).getPlaintext();
-        return new String(plainTextKey.array(), Charset.forName("UTF-8"));
+        return new String(plainTextKey.array(), StandardCharsets.UTF_8);
     }
 
 }
